@@ -17,7 +17,7 @@ import ProtectedRoute from "./Components/Extra/ProtectedRoute";
 import { Toaster } from "react-hot-toast";
 import Edit from "./Views/Members/EditMember";
 
-axios.defaults.baseURL = `https://mcicts-classes.cyclic.app/`;
+axios.defaults.baseURL = `https://alpha-kp6t.onrender.com/`;
 axios.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem("_access-token")}`;
   return config;
