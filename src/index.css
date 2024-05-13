@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  @apply p-4 md:p-16 lg:p-24;
+}
+.page-title {
+  @apply text-3xl lg:text-4xl font-semibold;
+}
+.button {
+  @apply bg-neutral-700 w-full flex items-center justify-center py-2 text-sm px-6 rounded text-neutral-100 font-semibold active:bg-neutral-900 transition-colors;
+}
+.button-err {
+  @apply bg-red-700 w-full flex items-center justify-center py-2 text-sm px-6 rounded text-red-100 font-semibold active:bg-red-900 transition-colors;
+}
+.top-shadow {
+  box-shadow: 0px -5px 20px -10px #0005;
+}
+#barcode-scanner canvas {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -10;
+}
+.marker {
+  transition: all 0.3s ease;
+  bottom: -90vh;
+  @apply left-0 w-full p-4 h-[80vh] fixed rounded top-shadow bg-neutral-100;
+}
+.marker.active {
+  bottom: 0;
+}
+.loading-icon {
+  animation: loadingAnimate 1s linear infinite;
+}
+@keyframes loadingAnimate {
+  0% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(390deg);
+  }
+}
+.input {
+  @apply bg-neutral-100 px-2 py-1 rounded outline-none border-neutral-200 border transition-all focus:shadow-md;
+}
+.modal-container {
+  transition: all 0.3s ease;
+  @apply fixed top-0 invisible opacity-0 flex
+    items-center justify-center left-0 w-full h-full bg-black bg-opacity-60;
+}
+.modal-container.active {
+  @apply visible opacity-100;
+}
+.modal {
+  @apply bg-white w-[95%] sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[30%] px-6 py-4 rounded;
+}
+.modal-title {
+  @apply text-lg font-semibold;
+}
